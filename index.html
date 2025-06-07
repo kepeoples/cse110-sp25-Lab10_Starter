@@ -8,15 +8,47 @@
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
   <title>Lab 10 - Return of the Party Horn</title>
 
+  <!-- Google Tag Manager -->
+  <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id=' + i + dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-NQPX3D7X');
+  </script>
+  <!-- End Google Tag Manager -->
+
+  <!-- Google Analytics (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y19S2VS5C4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-Y19S2VS5C4');
+  </script>
+
   <!-- JS Confetti -->
   <script src="assets/scripts/js-confetti.browser.js"></script>
 
   <!-- Main Stylesheet & Scripts -->
   <link rel="stylesheet" href="assets/styles/global.css" />
   <script src="assets/scripts/partyHorn.js" type="module"></script>
+
+  <style>
+    .blue {
+      background-color: lightblue;
+    }
+  </style>
 </head>
 
 <body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NQPX3D7X"
+            height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
   <header>
     <nav>
       <a href="speechSynth.html" title="Go to speech synthesizer">Speech Synthesizer</a>
@@ -42,6 +74,26 @@
       <audio class="hidden" src=""></audio>
     </section>
   </main>
+
+  <!-- A/B Test + GA4 Event Tracking -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const randomNumber = Math.random();
+      const shouldApplyClass = randomNumber < 0.5;
+      const body = document.querySelector('body');
+      const variant = shouldApplyClass ? 'blue' : 'white';
+
+      if (shouldApplyClass) {
+        body.classList.add('blue');
+      }
+
+      console.log('Variant assigned:', variant);
+
+      gtag('event', 'ab_variant', {
+        variant: variant
+      });
+    });
+  </script>
 </body>
 
 </html>
