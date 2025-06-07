@@ -5,3 +5,4 @@
 
 ## Team Members
 - William Peoples
+ ** I uploadedthe image google-analytics.png for Part 2 of the lab :) **
